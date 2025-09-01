@@ -1,0 +1,28 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: MultipleDataSourceDemo
+
+
+  datasource:
+    primary:
+      jdbcUrl: jdbc:postgresql://localhost:5432/postgres
+      username: postgres
+      password: postgres
+      driverClassName: org.postgresql.Driver
+
+    secondary:
+      jdbcUrl: jdbc:mysql://localhost:3306/mydb
+      username: root
+      password: Avyaan@123
+      driverClassName: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: 'create-drop'
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
